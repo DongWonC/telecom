@@ -1,5 +1,5 @@
 name: CICD-SSH
-on: [push,pull_request]
+on: [push, pull_request]
 
 jobs:
         build:
@@ -15,8 +15,8 @@ jobs:
                                   script: |
                                           whoami
                                           ls -al
-                                          cd ${{ github.event.repository. name }}
+                                          cd ${{ github.event.repository.name }}
                                           echo "Hello World!"
-                                          chmod +x deploy.sh
+                                          chomod +x deploy.sh
+                                          sh deploy.sh
                                           echo "Done----"
-
