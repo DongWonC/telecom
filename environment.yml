@@ -8,4 +8,6 @@ dependencies:
         - matplotlib
         - pip:
                 - streamlit
+                - google-cloud-bigquery
+                - pandas-bgq
 prefix: C:\Users\ehddn\anaconda3\envs\condagcp
