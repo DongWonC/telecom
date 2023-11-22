@@ -3,8 +3,7 @@
 import streamlit as st
 from PIL import Image
 
-from sub_app import home_app, store_app, agree
-
+from sub_app import home_app, store_app, agree, message
 def main():
 
     with st.sidebar:
@@ -21,7 +20,7 @@ def main():
         store_app.main()
 
     elif choice == '서비스 문자 발송':
-        agree.main()
+        agree.main(message)
 
     elif choice == '서비스 제공자':
         st.image(".\image\procider.png")
