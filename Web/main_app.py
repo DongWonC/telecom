@@ -10,7 +10,7 @@ from sub_app import home_app, store_app, total
 def main():
     with st.sidebar:
         # Fetch the image from GitHub
-        image_url = "https://raw.githubusercontent.com/DongWonC/telecom/main/Web/image/title.png"
+        image_url = "https://raw.githubusercontent.com/DongWonC/telecom/main/Web/image/kt_poster.png"
         response = requests.get(image_url)
 
         if response.status_code == 200:
