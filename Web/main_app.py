@@ -34,7 +34,14 @@ def main():
         total.main()
 
     elif choice == '서비스 제공자':
-        pass
+        provider_image_url = "https://github.com/DongWonC/telecom/raw/main/Web/image/procider.png"
+        provider_response = requests.get(provider_image_url)
+
+        if provider_response.status_code == 200:
+            provider_image = Image.open(BytesIO(provider_response.content))
+            st.image(provider_image, caption="서비스 제공자 이미지", use_column_width=True)
+        else:
+            st.error("Unable to load the service provider image.")
 
 
 if __name__ == "__main__":

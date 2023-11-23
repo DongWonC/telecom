@@ -1,4 +1,7 @@
 import streamlit as st
+import requests
+from PIL import Image
+from io import BytesIO
 
 def main():
     # 페이지의 제목
