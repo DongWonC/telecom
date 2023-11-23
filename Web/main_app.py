@@ -8,7 +8,7 @@ from sub_app import home_app, store_app, total
 def main():
 
     with st.sidebar:
-        sidebar_image_url = 'https://github.com/DongWonC/telecom/Web/image/kt_poster.png'
+        sidebar_image_url = './image/kt_poster.png'
         response = requests.get(sidebar_image_url)
         sidebar_image = Image.open(BytesIO(response.content))
         st.image(sidebar_image, use_column_width=True)
@@ -26,7 +26,7 @@ def main():
         total.main()
 
     elif choice == '서비스 제공자':
-        provider_image_url = 'https://github.com/DongWonC/telecom/Web/image/procider.png'
+        provider_image_url = './image/procider.png'
         provider_image_response = requests.get(provider_image_url)
         provider_image = Image.open(BytesIO(provider_image_response.content))
         st.image(provider_image)
