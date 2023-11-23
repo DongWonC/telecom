@@ -2,6 +2,7 @@
 import requests
 import streamlit as st
 from PIL import Image
+from io import BytesIO
 
 from sub_app import home_app, store_app, total
 def main():
