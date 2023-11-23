@@ -9,7 +9,7 @@ def main():
     with st.sidebar:
         sidebar_image_url = 'https://github.com/DongWonC/telecom/Web/image/kt_poster.png'
         response = requests.get(sidebar_image_url)
-        sidebar_image = Image.opne(BytesIO(response.content))
+        sidebar_image = Image.open(BytesIO(response.content))
         st.image(sidebar_image, use_column_width=True)
         
         menu = ['홈', '매장 찾기', '서비스 문자 발송', '서비스 제공자']
