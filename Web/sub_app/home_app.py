@@ -7,8 +7,19 @@ def main():
     # 두 개의 열 생성
     col1, col2 = st.columns(2)
 
-    # 첫 번째 열에 이미지 추가
-    marketing_image = col1.image(".\image\kt_poster.png", caption="디지털 기기 무료 교육", use_column_width=True)
+    # 첫 번째 열
+    image_url = "https://github.com/DongWonC/telecom/raw/main/Web/image/kt_poster.png"
+    response = requests.get(image_url)
+
+    if response.status_code == 200:
+        # 이미지를 열기
+        marketing_image = Image.open(BytesIO(response.content))
+
+        # 첫 번째 열에 이미지 추가
+        col1.image(marketing_image, caption="디지털 기기 무료 교육", use_column_width=True)
+    else:
+        # 이미지를 불러오지 못한 경우 에러 메시지 출력
+        col1.error("이미지를 불러올 수 없습니다.")
 
     # 두 번째 열에 텍스트 추가
     col2.write('''
