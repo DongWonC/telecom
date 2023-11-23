@@ -3,6 +3,9 @@ import requests
 from PIL import Image
 from io import BytesIO
 
+token = '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'
+headers = {'Authorization': f'token {token}'}
+
 def main():
     # 페이지의 제목
     st.title("디지털 기기 무료 교육")
@@ -12,7 +15,7 @@ def main():
 
     # 첫 번째 열
     image_url = "https://github.com/DongWonC/telecom/raw/main/Web/image/kt_poster.png"
-    response = requests.get(image_url)
+    response = requests.get(image_url, headers=headers)
 
     if response.status_code == 200:
         # 이미지를 열기

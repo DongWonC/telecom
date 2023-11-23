@@ -7,11 +7,14 @@ from io import BytesIO
 
 from sub_app import home_app, store_app, total
 
+token = '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'
+headers = {'Authorization': f'token {token}'}
+
 def main():
     with st.sidebar:
         # Fetch the image from GitHub
         image_url = "https://github.com/DongWonC/telecom/raw/main/Web/image/title.png"
-        response = requests.get(image_url)
+        response = requests.get(image_url, headers=headers)
 
         if response.status_code == 200:
             # If the image is fetched successfully, open it with PIL
@@ -35,7 +38,7 @@ def main():
 
     elif choice == '서비스 제공자':
         provider_image_url = "https://github.com/DongWonC/telecom/raw/main/Web/image/procider.png"
-        provider_response = requests.get(provider_image_url)
+        provider_response = requests.get(provider_image_url, headers=headers)
 
         if provider_response.status_code == 200:
             provider_image = Image.open(BytesIO(provider_response.content))
